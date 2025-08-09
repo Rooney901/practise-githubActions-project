@@ -1,5 +1,5 @@
 name: Run Lint, Test & Deploy on Push
-on: Push
+on: push
 jobs:
   lint:
     runs-on: ubuntu-latest
