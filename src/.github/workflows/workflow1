@@ -1,0 +1,14 @@
+name: Run Lint, Test & Deploy on Push
+on: Push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v3
+      - name: Get the Node jobs
+        uses: actions/setup-node@v3
+        with:
+          version: 18
+      - name: Run the lint report
+        run: npm run lint
