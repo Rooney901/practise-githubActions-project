@@ -1,0 +1,16 @@
+name: Issues trigger
+on: issues
+jobs:
+  issuesdemo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v3
+      - name: Get the Node js
+        uses: actions/setup-node@v3
+        with:
+          version: 18
+      - name: Install Dependencies
+        run: npm ci     
+      - name: use Github variables
+        run: echo "${{toJson(github)}}"
